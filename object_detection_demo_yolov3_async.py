@@ -428,7 +428,7 @@ def main():
                     # Set bounding box color to red
                     color = (0, 0, 255)
                     # Set bounding box thickness to 5
-                    thickness = 8
+                    thickness = 32
                 
                 
                 det_label = labels_map[obj['class_id']] if labels_map and len(labels_map) >= obj['class_id'] else \
