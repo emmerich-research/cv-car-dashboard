@@ -461,8 +461,10 @@ def main():
                                  cv2.FONT_HERSHEY_COMPLEX, 0.75, (10, 10, 200), 2)
 
             if not args.no_show:
+                # cv2.imshow("Detection Results", frame)
+                cv2.namedWindow("Detection Results", cv2.WND_PROP_FULLSCREEN)
+                cv2.setWindowProperty("Detection Results", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
                 cv2.imshow("Detection Results", frame)
-                cv2.cvSetWindowProperty("Detection Results", cv2.CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN)
                 key = cv2.waitKey(wait_key_time)
 
                 if key in {ord("q"), ord("Q"), 27}: # ESC key
