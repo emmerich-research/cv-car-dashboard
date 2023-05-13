@@ -428,7 +428,7 @@ def main():
                     # Set bounding box color to red
                     color = (0, 0, 255)
                     # Set bounding box thickness to 5
-                    thickness = 8
+                    thickness = 32
                 
                 
                 det_label = labels_map[obj['class_id']] if labels_map and len(labels_map) >= obj['class_id'] else \
@@ -461,6 +461,9 @@ def main():
                                  cv2.FONT_HERSHEY_COMPLEX, 0.75, (10, 10, 200), 2)
 
             if not args.no_show:
+                # cv2.imshow("Detection Results", frame)
+                cv2.namedWindow("Detection Results", cv2.WND_PROP_FULLSCREEN)
+                cv2.setWindowProperty("Detection Results", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
                 cv2.imshow("Detection Results", frame)
                 key = cv2.waitKey(wait_key_time)
 
