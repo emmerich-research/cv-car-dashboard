@@ -462,6 +462,7 @@ def main():
 
             if not args.no_show:
                 cv2.imshow("Detection Results", frame)
+                cv2.cvSetWindowProperty("Detection Results", cv2.CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN)
                 key = cv2.waitKey(wait_key_time)
 
                 if key in {ord("q"), ord("Q"), 27}: # ESC key
